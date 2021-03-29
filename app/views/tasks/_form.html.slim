@@ -1,0 +1,18 @@
+- if @task.errors.present?
+  ul#explanation.text-danger
+    - @task.errors.full_messages.each do |msg|
+      li = msg
+      
+= form_with model: @task, local: true do |f|
+  table.table
+    thead
+      tr
+        th= f.label :name
+        th= f.label :number 
+    tbody
+      tr
+        td= f.text_field :name
+        td= f.number_field :number
+  .text-right= f.submit '登録', class: 'btn btn-primary'
+  .text-secondary
+    p 個数未入力の場合、1個となります

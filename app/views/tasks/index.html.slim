@@ -1,0 +1,22 @@
+h1 アイテムリスト
+
+= link_to "アイテム登録", new_task_path, class: "btn btn-primary"
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th= Task.human_attribute_name(:name)
+      th= Task.human_attribute_name(:number)
+      th
+  tbody
+    - @tasks.each do |task|
+      tr
+        td= task.name
+        td= task.number
+        td
+          = link_to "削除", task, method: :delete, data: { confirm: "#{task.name}を削除します。よろしいですか？" }, class: "btn btn-outline-danger"
+
+.destroy-all
+  - if @tasks.present?
+    = button_to "全て削除して新規登録", destroy_all_tasks_path, method: :delete, data: { confirm: "全件削除します。よろしいですか？" }, class: 'btn btn-danger'
