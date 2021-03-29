@@ -1,1 +1,40 @@
 @import "bootstrap";
+
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+
+}
+
+footer {
+
+  .nav {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .nav-item {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    a {
+      display: block;
+      padding: 20px 0;
+      color: blue;
+      text-decoration: none;
+      font-size: 20px;
+    }
+  }
+  display: inline;
+  position: absolute;
+  bottom: 0;
+}
+.container {
+  font-size: 2rem;
+}
+
+
+
